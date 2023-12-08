@@ -1,4 +1,4 @@
-<nav class="sidebar" [ngClass]="{'close':!sidebarActive,'active':sidebarActive}">
+<nav class="sidebar" [ngClass]="{'close':!sidebarActive,'active':sidebarActive && !firstLoad}">
 	<header>
 		<div class="image-text">
 
@@ -8,14 +8,14 @@
 			</span>
 
 			<div class=" header-text">
-				<span class="name text">Romly App</span>
+				<span class="name text">Romly</span>
 				<span class="description text">Yout second brain</span>
 			</div>
 
 		</div>
 
 		<i class="bx bx-chevron-left toggle-on" [ngClass]="{'bx-chevron-right':!sidebarActive}"
-			(click)="sidebarActive = !sidebarActive"></i>
+			(click)="sidebarActive = !sidebarActive;firstLoad=false; "></i>
 	</header>
 
 	<div class="menu-bar">
@@ -41,23 +41,6 @@
 					<span class="text nav-text">Log out</span>
 				</a>
 			</li>
-
-			<!-- <li class="mode">
-				<span class="mode-text text">
-					Dark
-				</span>
-
-				<div class='toggle-switch'>
-					<label>
-						<input type='checkbox'>
-						<span class='slider'></span>
-					</label>
-				</div>
-
-				<span class="mode-text text">
-					Light
-				</span>
-			</li> -->
 
 		</div>
 	</div>

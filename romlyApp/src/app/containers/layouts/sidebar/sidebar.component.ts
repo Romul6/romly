@@ -17,6 +17,7 @@ export class SidebarLayout implements OnInit {
 
     public projects!: Array<Project>
     public sidebarActive: boolean = true
+    public firstLoad: boolean = true
 
     constructor(private sidebarService: SidebarService) {
 
