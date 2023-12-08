@@ -1,0 +1,65 @@
+<nav class="sidebar" [ngClass]="{'close':!sidebarActive,'active':sidebarActive}">
+	<header>
+		<div class="image-text">
+
+			<span class="image">
+				<!-- <img src="favicon.ico" alt="logo"> -->
+				<i class='bx bx-brain' style="font-size: 45px;"></i>
+			</span>
+
+			<div class=" header-text">
+				<span class="name text">Romly App</span>
+				<span class="description text">Yout second brain</span>
+			</div>
+
+		</div>
+
+		<i class="bx bx-chevron-left toggle-on" [ngClass]="{'bx-chevron-right':!sidebarActive}"
+			(click)="sidebarActive = !sidebarActive"></i>
+	</header>
+
+	<div class="menu-bar">
+		<div class="menu">
+			<ul class="menu-links">
+				@for (project of projects; track project.Id; let idx = $index, e = $even) {
+				<li class="nav-link">
+					<a href="#">
+						<i class="bx bx-home-alt icon"></i>
+						<span class="text nav-text">
+							{{ project.Name }}
+						</span>
+					</a>
+				</li>
+				}
+			</ul>
+		</div>
+
+		<div class="bottom-content">
+			<li>
+				<a href="#">
+					<i class="bx bx-log-out icon"></i>
+					<span class="text nav-text">Log out</span>
+				</a>
+			</li>
+
+			<!-- <li class="mode">
+				<span class="mode-text text">
+					Dark
+				</span>
+
+				<div class='toggle-switch'>
+					<label>
+						<input type='checkbox'>
+						<span class='slider'></span>
+					</label>
+				</div>
+
+				<span class="mode-text text">
+					Light
+				</span>
+			</li> -->
+
+		</div>
+	</div>
+
+</nav>
